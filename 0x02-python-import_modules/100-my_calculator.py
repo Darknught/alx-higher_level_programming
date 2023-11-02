@@ -2,12 +2,12 @@
 
 if __name__ == "__main__":
     import sys
-    from calculator_1 import __all__
+    from calculator_1 import add, sub, mul, div
 
     mycount = len(sys.argv) - 1
     a = int(sys.argv[1])
     b = int(sys.argv[3]
-    op = ["+", "-", "*", "/"]
+    op = {"+": add, "-": sub, "*": mul, "/": div}
 
     if mycount != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
