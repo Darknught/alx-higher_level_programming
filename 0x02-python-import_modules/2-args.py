@@ -12,9 +12,9 @@ if __name__ == "__main__":
     if mycount == 0:
         print("0 arguments.")
     elif mycount == 1:
-        print("1 argument.")
+        print("1 argument:")
     else:
-        print("{} arguments".format(mycount))
+        print("{} arguments:".format(mycount))
 
         # the for loop is to iterate over sys.argv nd print each arg on newline
         # i + 1 is used to represent the index of current arg
