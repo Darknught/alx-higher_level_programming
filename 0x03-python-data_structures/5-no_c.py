@@ -2,6 +2,22 @@
 
 def no_c(my_string):
 
-    del my_string["c", "C"]
-    for i in my_string:
-        return my_string
+    """
+    Removes all characters c and C from a string
+    ...
+
+    Parameters
+    ----------
+    my_string : str
+        The string to remove 'Cc' from
+
+    Return:
+        The new string
+
+    Exp: join() returns a single string that is concatinated after removal
+    [c for c in my_string if c not in ['c', 'C']] - creates a new list that
+    contains all of the characters in my_string except 'c' and 'C'
+
+    """
+
+    return ("".join([c for c in my_string if c not in ['c', 'C']]))
