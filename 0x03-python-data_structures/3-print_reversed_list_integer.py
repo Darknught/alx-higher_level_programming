@@ -12,5 +12,5 @@ def print_reversed_list_integer(my_list=[]):
         The list of elements
     """
     if my_list:
-        for count in reversed(my_lis)t:
+        for count in reversed(my_list):
             print("{:d}".format(count))
