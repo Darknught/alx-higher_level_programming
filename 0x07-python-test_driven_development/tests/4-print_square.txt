@@ -12,6 +12,17 @@ Usage
 ::
 
     >>> print_square = __import__('4-print_square').print_square
+
+Checking for module docstring:
+    >>> m = __import__("4-print_square").__doc__
+    >>> len(m) > 1
+    True
+
+Checking for function docstring:
+    >>> f = __import__{"4-print_square").print_square.__doc__
+    >>> len(f) > 1
+    True
+
     >>> print_square(5)
     #####
     #####
@@ -58,7 +69,13 @@ The function will raise an error when a float is passed
 
 ::
 
-    >>> print_square(4.5)
-    Traceback (most recent call last)
+    >>> print_square(1.0)
+    Traceback (most recent call last):
 	...
     TypeError: size must be an integer
+
+Checking for no arguments:
+    >>> print_square()
+    Traceback (most recent call last):
+	...
+    TypeError: print_square() missing 1 required positional argument: 'size'
