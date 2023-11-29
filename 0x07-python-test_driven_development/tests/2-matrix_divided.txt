@@ -58,3 +58,28 @@ The function will raise an error is the matrix are not of the same size
     Traceback (most recent call last):
 	...
     TypeError: Each row of the matrix must have the same size
+
+The function checks for matrix division consisting of integers by float
+
+::
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+The function checks where one argument is missing
+
+::
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+    Traceback (most recent call last):
+	...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Checks where both matrix and div arguments are missing
+
+::
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+	...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
