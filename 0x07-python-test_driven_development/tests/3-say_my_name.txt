@@ -21,7 +21,7 @@ an empty string is printed
 ::
 
     >>> say_my_name("Bob")
-    My name is Bob
+    My name is Bob 
 
 Function will raise an error when first argument is not a string
 
