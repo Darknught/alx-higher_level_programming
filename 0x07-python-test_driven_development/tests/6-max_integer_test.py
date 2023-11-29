@@ -46,6 +46,10 @@ class TestMaxIntegerFunction(unittest.TestCase):
         """Tests for empty list"""
         self.assertIsNone(max_integer())
 
+    def test_max_at_end(self):
+        """Tests for max integer at the end of list"""
+        self.assertEqual(max_integer([1, 2, 3, 5]), 5)
+
     def test_none(self):
         """Tests for passing None as argument"""
         with self.assertRaises(TypeError):
