@@ -1,4 +1,4 @@
-#!/ust/bin/python3
+#!/usr/bin/python3
 """The module prints a text with 2 new lines after . ? : """
 
 
