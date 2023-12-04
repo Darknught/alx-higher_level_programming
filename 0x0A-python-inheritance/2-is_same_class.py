@@ -6,4 +6,6 @@ class and returns True, or return False if otherwise
 
 def is_same_class(obj, a_class):
     """Initialization of the function"""
-    return isinstance(obj, a_class)
+    if type(obj) == a_class:
+        return True
+    return False
