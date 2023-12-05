@@ -11,8 +11,18 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=None):
+    def to_json(self):
         """public class method that retrieves a dictionary representation"""
+        return self.__dict__
+
+    def to_json(self, attrs=None):
+        """public class method that retrieves a dictionary representation
+        Args:
+            if attrs is a list of strings, only attribute names contained
+            in this list must be retrieved
+        Otherwise:
+            All attributes must be retrieved
+        """
         if isinstance(attrs, str) and all(isinstance(i, str) for i in attrs):
             return {i: getattr(self, i, Nonr) for i in attrs}
         return self.__dict__
