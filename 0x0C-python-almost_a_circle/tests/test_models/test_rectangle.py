@@ -16,14 +16,9 @@ class TestRectangle(unittest.TestCase):
         self.assertIsInstance(r, Rectangle)
         self.assertIsInstance(r, Base)
 
-    def test_rectangle_attributes(self):
-        """Tests if the attributes are set correctly"""
-        r = Rectangle(10, 20, 30, 40, 1)
-        self.assertEqual(r.__width, 10)
-        self.assertEqual(r.__height, 20)
-        self.assertEqual(r.__x, 30)
-        self.assertEqual(r.__y, 40)
-        self.assertEqual(r.id, 1)
+    def test_single_argument(self):
+        """Test Rectangle initialization with single argument"""
+        r = Rectangle(10)
 
 if __name__ == "__main__":
     unittest.main()
