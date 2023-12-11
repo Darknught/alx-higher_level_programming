@@ -115,5 +115,17 @@ class TestRectangle(unittest.TestCase):
         r.update(10, width=20, height=30, x=40, y=50)
         self.assertRectangleAttributes(r, 1, 2, 3, 4, 10)
 
+    def test_rectangle_to_dictionary(self):
+        """test Rectangle to dictionary method"""
+        r = Rectangle(10, 5, 2, 3, 1)
+        expected_dict = {'id': r.id, 'width': 10, 'height': 5, 'x': 2, 'y': 3}
+        self.assertEqual(r.to_dictionary(), expected_dict)
+
+    def test_rectangle_to_dictionary_empty(self):
+        """Test Rectangle to_dictionary method with default value"""
+        r = Rectangle(1, 1)
+        expected_dict = {'id': r.id, 'width': 1, 'height': 1, 'x': 0, 'y': 0}
+        self.assertEqual(r.to_dictionary(), expected_dict)
+
 if __name__ == "__main__":
     unittest.main()

@@ -23,7 +23,26 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """Public method to assign attributes"""
+        if args:
+            attributes = ["id", "size", "x", "y"]
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        elif kwargs and not args:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
     def __str__(self):
         """Overridden __str__ method for Square"""
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width)
+
+    def to_dictionary(self):
+        """public method that returns dictionary representation"""
+        return {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+                }
