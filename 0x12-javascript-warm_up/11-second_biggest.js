@@ -4,9 +4,10 @@
 const { argv } = require('process');
 
 const integers = argv.slice(2).filter(arg => !isNaN(parseInt(arg)));
+const mysort = integers.sort((a, b) => b - a);
 
-if (integers.length >= 2) {
-  console.log(integers[1]);
+if (mysort.length >= 2) {
+  console.log(mysort[1]);
 } else {
   console.log(0);
 }
