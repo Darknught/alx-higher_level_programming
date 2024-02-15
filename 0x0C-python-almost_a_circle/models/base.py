@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that defines a class"""
 import json
+import csv
 
 
 class Base:
@@ -77,7 +78,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Save a list of instance to a file in CSV format"""
-        filename - cls.__name__ + ".csv"
+        filename = cls.__name__ + ".csv"
         with open(filename, 'w', newline='') as f:
             writer = csv.writer(f)
             if cls.__name__ == "Rectangle":
