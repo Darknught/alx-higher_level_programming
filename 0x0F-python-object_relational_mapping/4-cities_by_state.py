@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute SQL query to select all cities and sort them by id
-    query = "SELECT * FROM `cities`"
+    query = "SELECT * FROM `cities` ORDER BY id ASC"
     cursor.execute(query)
 
     # Fetch all rows
