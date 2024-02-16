@@ -21,16 +21,20 @@ if __name__ == "__main__":
             f"mysql://{username}:{password}@localhost:3306/{database}"
             )
 
+    # Bind the engine to the Base class
+    Base.metadata.bind = engine
+
     # Create session
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # Query all City objects
-    cities = session.query(City).order_by(City.id).all()
+    cities = session.query(
+            City, State).filter(City.state_id == State.id).order_by(City.id)
 
     # Print the City objects with their corresponding State names
-    for city in cities:
-        print(f"{city.name}: ({city.id}) {city.name}")
+    for city, state in cities:
+        print(f"{state.name}: ({city.id}) {city.name}")
 
     # Close session
     session.close()
