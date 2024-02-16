@@ -8,8 +8,6 @@ import sys
 
 
 if __name__ == "__main__":
-    state_name = sys.argv[4]
-
     db = MySQLdb.connect(
             user=sys.argv[1],
             passwd=sys.argv[2],
@@ -20,8 +18,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute SQL query to select states with matching name
-    qry = "SELECT * FROM `states` WHERE name = %s ORDER BY id ASC"
-    cursor.execute(qry, (state_name,))
+    qry = "SELECT * FROM `states` WHERE BINARY `name` = '{}'".format(sys.argv[4])
+    cursor.execute(qry)
 
     # Fetch all rows
     states = cursor.fetchall()
