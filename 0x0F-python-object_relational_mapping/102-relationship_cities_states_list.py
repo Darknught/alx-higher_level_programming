@@ -25,7 +25,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Queries to fetch all State objects sorted by id
+    # Queries to List all City objects sorted by id
     cities = session.query(City).order_by(City.id).all()
 
     # Print results
