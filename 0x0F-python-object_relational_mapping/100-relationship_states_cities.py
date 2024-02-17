@@ -12,13 +12,10 @@ from relationship_state import State
 from relationship_city import Base, City
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
     # Create engine to connect to MySQL server
     engine = create_engine(
-            f"mysql://{username}:{password}@localhost:3306/{database}"
+            "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+                sys.argv[1], sys.argv[2], sys.argv[3])
             )
 
     # Create session
@@ -26,12 +23,10 @@ if __name__ == "__main__":
     session = Session()
 
     # Create a new State and City
-    new_state = State(name="California")
-    new_city = City(name="San Francisco")
+    new_state = City(name="San Francisco", state=State(name="California"))
 
     # Add the new State and City to the session and commit the transaction
     session.add(new_state)
-    session.add(new_city)
 
     session.commit()
 
