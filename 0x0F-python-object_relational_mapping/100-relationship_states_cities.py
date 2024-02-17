@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     # Create a new State and City
     new_state = State(name="California")
-    new_city = City(name="San Francisco", state=new_state)
+    new_city = City(name="San Francisco")
 
     # Add the new State and City to the session and commit the transaction
     session.add(new_state)
