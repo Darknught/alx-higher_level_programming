@@ -16,7 +16,6 @@ from sqlalchemy.orm import relationship
 from relationship_city import Base, City
 
 
-
 class State(Base):
     """Represents a state for a MySQL database.
     ___table__(str); The name of the MySQL table to store states.
