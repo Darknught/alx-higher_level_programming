@@ -3,7 +3,9 @@
 
 
 def find_peak(list_of_integers):
-    """Function initialization"""
+    """Function initialization
+    Function uses binary search algo to find the peak
+    """
     if not list_of_integers:
         return None
 
