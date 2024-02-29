@@ -9,5 +9,7 @@ fi
 
 URL=$1
 
-response=$(curl -s -o /dev/null -w "%{size_download} %{http_code}" $URL)
-echo "$response"
+response=$(curl -s "$URL")
+response_size=$(echo -n "$response" | wc -c)
+
+echo "$response_size"
