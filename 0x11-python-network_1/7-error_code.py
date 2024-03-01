@@ -22,7 +22,7 @@ if __name__ == "__main__":
     url = sys.argv[1]
 
     # Sends a request to the specfied URL
-    resp = requests.grt(url)
+    resp = requests.get(url)
 
     # If HTTP status code is greater than or eq to 400 print err code
     if resp.status_code >= 400:
