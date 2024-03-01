@@ -1,6 +1,16 @@
 #!/usr/bin/python3
-""" A script that fetches https://alx-intranet.hbtn.io/status"""
+""" Fetches content from a URL using urllib and displays response details.
 
+This script fetches content from a specified URL using the urllib package.
+It then prints out details about the response,including the type of the content
+the content itself, and the UTF-8 decoded content.
+
+Usage:
+    python3 -c 'print(__import__("my_module").__doc__)'
+
+Note:
+    This script requires Python 3.x and the urllib package.
+"""
 
 import urllib.request
 
