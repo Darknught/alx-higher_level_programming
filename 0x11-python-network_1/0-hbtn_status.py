@@ -11,14 +11,14 @@ Usage:
 Note:
     This script requires Python 3.x and the urllib package.
 """
-
 import urllib.request
 
+
 if __name__ == "__main__":
-    req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
+    req = urllib.request.Request("https://alx-intranet.hbtn.io/status")
     with urllib.request.urlopen(req) as response:
         body = response.read()
-        utf8_content = body.decode('utf-8')
+        utf8_content = body.decode("utf-8")
 
     print("- Body response:")
     print("\t- type: {}".format(type(body)))
