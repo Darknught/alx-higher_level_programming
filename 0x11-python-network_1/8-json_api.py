@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
         if data:
             # If JSON is not empty, display the id and name
-            print("[{}] {}}".format(data.get('id'), data.get('name')))
+            print("[{}] {}".format(data.get('id'), data.get('name')))
         else:
             print("No result")
 
