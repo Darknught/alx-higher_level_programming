@@ -9,15 +9,10 @@ request.get(apiUrl, (error, response, body) => {
     console.log('Error:', error);
   } else {
     const films = JSON.parse(body).results;
-    let count = 0;
-
-    films.forEach(film => {
-      if (film.characters.includes(
-        'https://swapi-api.alx-tools.com/api/people/18/'
-      )) {
-        count++;
-      }
-    });
+    const count = films.filter(film =>
+      film.characters.includes(
+        'https://swapi-api.alx-tools.com/api/people/18/')
+    ).length;
     console.log(`${count}`);
   }
 });
