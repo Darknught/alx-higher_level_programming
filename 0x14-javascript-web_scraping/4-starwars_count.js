@@ -7,12 +7,10 @@ const apiUrl = process.argv[2];
 request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.log('Error:', error);
-  } else {
-    const films = JSON.parse(body).results;
-    const count = films.filter(film =>
-      film.characters.includes(
-        'https://swapi-api.alx-tools.com/api/people/18/')
-    ).length;
-    console.log(`${count}`);
   }
+  const results = JSON.parse(body).results;
+  const count = results.reduce((count, movie) => {
+    return movie.characters.some(character => character.endsWith('/18/')) ? count + 1 : count;
+  }, 0);
+  console.log(`${count}`);
 });
