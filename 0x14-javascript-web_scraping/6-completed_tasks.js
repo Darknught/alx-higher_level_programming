@@ -8,16 +8,12 @@ request.get(apiUrl, (error, response, body) => {
     console.log('Error:', error);
   } else {
     const tasks = JSON.parse(body);
-    const completedTasksCount = {};
-
-    tasks.forEach(task => {
+    const completedTasksCount = tasks.reduce((acc, task) => {
       if (task.completed) {
-        if (!completedTasksCount[task.userId]) {
-          completedTasksCount[task.userId] = 0;
-        }
-        completedTasksCount[task.userId]++;
+        acc[task.userId] = (acc[task.userId] || 0) + 1;
       }
-    });
+      return acc;
+    }, {});
     console.log(completedTasksCount);
   }
 });
