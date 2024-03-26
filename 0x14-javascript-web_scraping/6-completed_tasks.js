@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // A script that computes the number of tasks completed by user ID
 const request = require('request');
-const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+const apiUrl = process.argv[2];
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
